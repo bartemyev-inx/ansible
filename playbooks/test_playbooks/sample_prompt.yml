@@ -1,0 +1,13 @@
+---
+- hosts: junos
+  gather_facts: False
+  vars_prompt:
+          - name: "username"
+            prompt: "Enter your username"
+          - name: "passwd"
+            prompt: "Enter your pass:"
+            private: yes
+  tasks:
+          - name: Test ansible prompt
+            degug:
+              msg: "{{ username }}"

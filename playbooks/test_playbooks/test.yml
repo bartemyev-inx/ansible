@@ -1,0 +1,17 @@
+- hosts: localhost
+  gather_facts: False
+  vars_prompt:
+    - name: "username"
+      prompt: "Enter your username"
+      private: no
+    - name: "passwd"
+      prompt: "Enter your password"
+      private: yes
+      
+  tasks:
+    - name: Ansible prompt username.
+      debug:
+        msg: "{{ username }}"
+    - name: Ansible prompt password.
+      debug:
+        msg: "{{ passwd }}"
