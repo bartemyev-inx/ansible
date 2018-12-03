@@ -1,0 +1,16 @@
+---
+- hosts: local
+  gather_facts: False
+  vars:
+    list_of_ips:
+      - 192.168.1.1
+      - 192.168.1.2
+      - 172.16.31.10
+      - 172.16.31.12
+      - 10.10.10.10
+        
+  tasks:
+    - debug:
+        msg: "IP Address: {{ item }}"
+      with_items: "{{ list_of_ips }}"  
+

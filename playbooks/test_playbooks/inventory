@@ -44,6 +44,12 @@
 [junos]
 10.0.1.102
 
+[local]
+localhost
+
+[local:vars]
+ansible_connection=local
+
 [junos:vars]
 ansible_connection=network_cli
 ansible_network_os=junos
